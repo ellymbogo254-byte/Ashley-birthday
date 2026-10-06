@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ashley 🎂❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:radial-gradient(circle,#6b247f,#16091f);
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow:hidden;
+}
+
+.screen{
+    min-height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    padding:25px;
+    animation:fade 1s;
+}
+
+.active{display:flex}
+
+@keyframes fade{
+    from{opacity:0;transform:scale(.9)}
+    to{opacity:1;transform:scale(1)}
+}
+
+h1{
+    font-size:38px;
+    text-shadow:0 0 20px #ff72d2;
+}
+
+h2{font-size:28px}
+
+p{
+    max-width:650px;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.cake{
+    font-size:90px;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-15px)}
+}
+
+.age{
+    font-size:100px;
+    font-weight:bold;
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.15)}
+}
+
+button{
+    border:0;
+    padding:15px 25px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#ff4fa3,#984cff);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 25px #0006;
+}
+
+button:hover{transform:scale(1.07)}
+
+.box{
+    max-width:700px;
+    padding:25px;
+    border-radius:20px;
+    background:#ffffff18;
+    border:1px solid #ffffff30;
+    margin-bottom:25px;
+}
+
+.reason{
+    max-width:600px;
+    width:100%;
+    padding:15px;
+    margin:6px;
+    border-radius:15px;
+    background:#ffffff12;
+}
+
+.float{
+    position:fixed;
+    bottom:-50px;
+    font-size:35px;
+    animation:up 6s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes up{
+    to{
+        transform:translateY(-110vh) rotate(20deg);
+        opacity:0;
+    }
+}
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    font-size:25px;
+    animation:fall 3s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+    h1{font-size:30px}
+    h2{font-size:24px}
+    p{font-size:16px}
+    .cake{font-size:70px}
+    .age{font-size:80px}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="song" preload="auto">
+    <source src="Happy Birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCREEN 1 -->
+<section class="screen active" id="s1">
+    <div class="cake">🎂</div>
+
+    <h1>Hey Ashley... 👀</h1>
+
+    <p>
+        I know your birthday was yesterday 😂
+        but I couldn't let it pass without making
+        you something special. ❤️
+    </p>
+
+    <button onclick="start()">
+        Open Your Surprise 🎁
+    </button>
+</section>
+
+
+<!-- SCREEN 2 -->
+<section class="screen" id="s2">
+    <div class="cake">🎂🎉</div>
+
+    <h1>HAPPY 19TH BIRTHDAY!</h1>
+
+    <div class="age">19</div>
+
+    <h2>Ashley ❤️</h2>
+
+    <p>
+        Welcome to another beautiful chapter
+        of your life. 🥳
+    </p>
+
+    <button onclick="next(3)">
+        There's More 👀
+    </button>
+</section>
+
+
+<!-- SCREEN 3 -->
+<section class="screen" id="s3">
+
+    <h2>Something I Want You To Know ❤️</h2>
+
+    <div class="box">
+        <p id="typing"></p>
+    </div>
+
+    <button onclick="next(4)">
+        Keep Reading 🥹
+    </button>
+</section>
+
+
+<!-- SCREEN 4 -->
+<section class="screen" id="s4">
+
+    <h2>Why You're Special 🌟</h2>
+
+    <div class="reason">❤️ You're genuinely caring.</div>
+    <div class="reason">🌸 You have a beautiful heart.</div>
+    <div class="reason">😂 You bring laughter wherever you go.</div>
+    <div class="reason">🤝 You're someone people can count on.</div>
+    <div class="reason">🌟 You're becoming an amazing young woman.</div>
+
+    <button onclick="next(5)">
+        But Wait... 😂
+    </button>
+</section>
+
+
+<!-- SCREEN 5 -->
+<section class="screen" id="s5">
+
+    <div class="cake">😂🎂</div>
+
+    <h1>So You're 19 Now?</h1>
+
+    <div class="box">
+        <p>
+            You're officially 19...
+            you're growing older,
+            more mature and more responsible...
+            supposedly. 😂😂
+        </p>
+
+        <h2>
+            BUT...
+        </h2>
+
+        <p>
+            You'll always be my little kid cousin. 😂❤️
+        </p>
+    </div>
+
+    <button onclick="next(6)">
+        One Last Thing ❤️
+    </button>
+</section>
+
+
+<!-- SCREEN 6 -->
+<section class="screen" id="s6">
+
+    <div class="cake">🎂🎉🥳</div>
+
+    <h1>Happy Birthday Ashley! ❤️</h1>
+
+    <div class="box">
+        <p id="final"></p>
+    </div>
+
+    <button onclick="celebrate()">
+        CELEBRATE! 🎉
+    </button>
+</section>
+
+
+<script>
+
+const song=document.getElementById("song");
+
+const message=
+"Ashley, I just want you to know how much I appreciate you. " +
+"You're such a caring person and you have a beautiful heart. " +
+"I hope this new chapter brings you happiness, peace, success " +
+"and many beautiful memories. Keep smiling, keep growing, " +
+"and never stop being the amazing person you are. ❤️";
+
+const finalMessage=
+"Happy 19th Birthday, Ashley! 🎂❤️ " +
+"May this year bring you happiness, success, peace, laughter " +
+"and everything beautiful you deserve. Never lose your caring heart. " +
+"And remember... no matter how old you become, " +
+"you'll always be my little kid cousin. 😂❤️ " +
+"Here's to 19 and many more amazing birthdays! 🎉🥳";
+
+
+function start(){
+
+    song.volume=.7;
+    song.play();
+
+    next(2);
+
+    setInterval(balloon,900);
+    setInterval(sparkle,700);
+}
+
+
+function next(number){
+
+    document.querySelectorAll(".screen")
+    .forEach(x=>x.classList.remove("active"));
+
+    document.getElementById("s"+number)
+    .classList.add("active");
+
+    burst();
+
+    if(number===3)
+        type("typing",message);
+
+    if(number===6)
+        type("final",finalMessage);
+}
+
+
+function type(id,text){
+
+    let box=document.getElementById(id);
+    box.innerHTML="";
+    let i=0;
+
+    let timer=setInterval(()=>{
+
+        box.innerHTML+=text[i];
+        i++;
+
+        if(i>=text.length)
+            clearInterval(timer);
+
+    },35);
+}
+
+
+function balloon(){
+
+    let x=document.createElement("div");
+
+    x.className="float";
+
+    x.innerHTML=
+        ["🎈","🎈","🎈","🎉","💖"]
+        [Math.floor(Math.random()*5)];
+
+    x.style.left=Math.random()*100+"vw";
+
+    document.body.appendChild(x);
+
+    setTimeout(()=>x.remove(),6000);
+}
+
+
+function sparkle(){
+
+    let x=document.createElement("div");
+
+    x.className="float";
+
+    x.innerHTML=
+        ["✨","⭐","💖","🌟"]
+        [Math.floor(Math.random()*4)];
+
+    x.style.left=Math.random()*100+"vw";
+
+    document.body.appendChild(x);
+
+    setTimeout(()=>x.remove(),6000);
+}
+
+
+function burst(){
+
+    for(let i=0;i<15;i++){
+
+        setTimeout(()=>{
+
+            let x=document.createElement("div");
+
+            x.className="float";
+            x.innerHTML="💖";
+
+            x.style.left=(40+Math.random()*20)+"vw";
+
+            document.body.appendChild(x);
+
+            setTimeout(()=>x.remove(),3000);
+
+        },i*50);
+    }
+}
+
+
+function celebrate(){
+
+    for(let i=0;i<100;i++){
+
+        setTimeout(()=>{
+
+            let x=document.createElement("div");
+
+            x.className="confetti";
+
+            x.innerHTML=
+                ["🎉","🎊","✨","💖","🥳"]
+                [Math.floor(Math.random()*5)];
+
+            x.style.left=Math.random()*100+"vw";
+
+            document.body.appendChild(x);
+
+            setTimeout(()=>x.remove(),3000);
+
+        },i*30);
+    }
+}
+
+</script>
+
+</body>
+</html>
